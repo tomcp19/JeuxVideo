@@ -22,6 +22,10 @@ void setup () {
   portalA = new Portal(rectA, 0 ,0);
   portalB = new Portal(rectB, 0, 0);
   
+  portalA.getCircle().fillColor = color (200, 50, 0); 
+  portalB.getCircle().fillColor = color (0, 50, 255); 
+    
+  
   for (int i = 0; i < flockSize; i++) {
     Mover m = new Mover(new PVector(random(0, width), random(0, height)), new PVector(random (-2, 2), random(-2, 2)));
     m.fillColor = color(random(255), random(255), random(255));
