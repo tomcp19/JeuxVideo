@@ -1,40 +1,39 @@
-/**
-  Classe simulant un fluide. Elle est représentée par un rectangle.
-  
-  Lab1: ●  L’objet fluide aura la largeur de la fenêtre et une hauteur aléatoire de 0.1 * height et 0.4 * height.
-        ●  L’objet devra toujours toucher au bas de la fenêtre.
-        ●  La densité du fluide sera une valeur aléatoire entre 1.5 et 3. Affichez la valeur de la densité bien identifiée dans le milieu du fluide.
-        ●  Affichez votre nom en dessous de la valeur du fluide.
-
-*/
 class Portal {
-  Rectangle r;
-  float density;
-  float coefficientFriction;
+  Circle c;
+ 
+
   
   Portal () {
-    float quarterHeight = height / 4;
-    r = new Rectangle(0, height - quarterHeight, width, quarterHeight);
-    density = 0.8;
-    coefficientFriction = 0.1;
+    float x, y, radius;
+    
+    x = random(100,700);
+    y = random(100, 500);
+    radius = 50;
+    c = new Circle(x, y, radius);
+
   }
   
-  Portal (Rectangle _r, float _density, float _coefficientFriction) {
-    r = _r;
-    density = _density;
-    coefficientFriction = _coefficientFriction;
+  
+  Portal (Circle _c) {
+    c = _c;
   }
   
-  void setRectangle (Rectangle _r) {
-    r = _r;
+  void setRectangle (Circle _r) {
+    c = _r;
   }
   
-  Rectangle getRectangle () {
-    return r;
+  
+  
+  void setCircle (Circle _c) {
+    c = _c;
+  }
+  
+  Circle getCircle () {
+    return c;
   }
   
   void display () {
-    r.display();
+    c.display();
   }
   
   /**
